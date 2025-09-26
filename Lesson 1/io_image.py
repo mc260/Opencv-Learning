@@ -83,5 +83,5 @@ cv2.waitKey(0)   #delay=0 无限延期直至出现键盘指令
 '''
 
 
-cv2.imwrite('text out.jpg',img)      #导出图像
+cv2.imwrite('text out.jpg', img)      #导出图像
 
