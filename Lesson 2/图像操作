@@ -1,0 +1,14 @@
+# resizing  调整图像大小
+
+cv2.resize的两种使用方法
+一、直接设定图片的像素大小（宽，高）
+resized_img = cv2.resize(img, (400, 300))  # 将图像调整为宽400像素，高300像素
+
+二、使用 fx 和 fy 参数：指定相对于原始图像的缩放比例
+resized_img = cv2.resize(img, None, fx=0.5, fy=0.5)  # 宽和高均缩小为原来的一半
+resized_img = cv2.resize(img, (0, 0), fx=2, fy=2)    # 宽和高均放大为原来的两倍
+
+#crop   裁切图像
+
+cropimg=img[19:515,47:516]
+#img为Numpy数组 选定范围即可裁切  img[宽1:宽2,高1:高2]
