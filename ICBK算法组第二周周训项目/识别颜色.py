@@ -6,7 +6,7 @@ from HSVfinding import get_limits                               #用现成的轮
 fingcolar = [21,177,152]                                        #在BGR色彩空间要检测的颜色
 
 wecan=cv2.VideoCapture(0)
-while (True):
+while True:
     ret,frame=wecan.read()
 
     hsvimg=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)                #转换为HSV色彩空间
