@@ -30,7 +30,7 @@ while (True):
     print(bbox)
     if bbox is not None:
         x1,y1,x2,y2=bbox                                        #解码bbox 得到颜色边框对角两点坐标
-        cv2.rectangle(frame,(x1,y1),(x2,y2),(255,0,0),-1)        #绘制边框
+        cv2.rectangle(frame,(x1,y1),(x2,y2),(255,0,0),2)        #绘制边框
 
 
     cv2.imshow('frame',frame)
