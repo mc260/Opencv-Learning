@@ -1,0 +1,47 @@
+#掩码
+
+mask = cv2.inRange(src, lowerb, upperb)
+
+参数名	数据类型	是否必需	描述
+src	numpy.ndarray	是	输入图像，通常是 HSV 颜色空间的图像
+lowerb	Scalar 或 numpy.array	是	颜色范围的下界，格式为 [H_min, S_min, V_min]
+upperb	Scalar 或 numpy.array	是	颜色范围的上界，格式为 [H_max, S_max, V_max]
+返回值	numpy.ndarray	-	二值掩码图像，符合范围的区域为白色(255)，不符合的为黑色(0)
+
+
+#Pillow库
+
+Image.fromarray(obj, mode=None)         将 numpy 数组转换为 PIL 图像对象
+
+参数	    数据类型	   是否必需	     描述
+obj	 numpy.ndarray	是	包含图像数据的 numpy 数组
+mode	str	        否	图像模式（如 'RGB', 'L', 'RGBA' 等）。如果省略，会自动推断        注意颜色空间转换（BGR ↔ RGB）
+
+Image.fromarray() 的主要作用是在不同的图像处理库之间搭建桥梁：
+
+从 OpenCV 到 PIL：OpenCV 使用 BGR 格式的 numpy 数组，PIL 使用 RGB 格式的 Image 对象
+从 numpy 数组到图像：将数值数组转换为可显示、可保存的图像
+数据格式转换：在不同颜色空间和数据类型之间进行转换
+
+
+#绘制边框
+cv2.rectangle() 语法和参数详解
+cv2.rectangle() 是 OpenCV 中用于在图像上绘制矩形的函数。它可以用来画边框、标记区域、创建遮罩等。
+
+cv2.rectangle(img, pt1, pt2, color, thickness, lineType, shift)
+
+参数	数据类型	是否必需	默认值	描述
+img	numpy.ndarray	是	-	要绘制矩形的输入图像
+pt1	tuple (x, y)	是	-	矩形左上角点的坐标
+pt2	tuple (x, y)	是	-	矩形右下角点的坐标
+color	tuple (B, G, R)	是	-	矩形的颜色，BGR格式
+thickness	int	否	1	线条粗细。-1 表示填充矩形
+lineType	int	否	8	线条类型（8、4、cv2.LINE_AA）
+shift	int	否	0	点坐标的小数位数
+
+注意事项
+坐标系统：OpenCV 使用 (x, y) 坐标系统，x 向右增长，y 向下增长
+
+颜色格式：记住是 BGR 而不是 RGB
+
+图像修改：cv2.rectangle() 会直接修改输入的图像
