@@ -1,0 +1,37 @@
+一、均值模糊（blur）
+
+语法：
+dst = cv2.blur(src, ksize[, dst[, anchor[, borderType]]])
+
+参数：                                    说明
+src	        输入图像。可以是任意通道数的图像，函数会独立处理每个通道。图像深度（位深）通常是 CV_8U, CV_16U, CV_16S, CV_32F 或 CV_64F。
+dst	        输出图像。其尺寸和类型与输入图像 src 相同。
+ksize	    模糊核的大小。这是一个 Size 类型参数，用 (width, height) 表示核的宽和高。这两个值都必须是正奇数（如 3, 5, 7）。核尺寸越大，图像的模糊效果越明显。
+anchor	    锚点位置。默认值为 Point(-1, -1)，表示锚点位于核的中心。
+borderType	边界像素外推法。当核位于图像边缘时，用于指定如何处理边界外的像素。默认值为 BORDER_DEFAULT。其他可选方式包括 BORDER_CONSTANT（常数填充）、BORDER_REPLICATE（复制边界像素）等。
+
+
+二、高斯模糊（GaussianBlur）
+
+语法：
+dst = cv2.GaussianBlur(src,  ksize, sigmaX[ dst [ sigmaY [ borderType ] ] ] )
+
+参数	数据类型	说明
+src	InputArray	输入图像，支持任意通道数，图像深度应为：CV_8U, CV_16U, CV_16S, CV_32F, CV_64F
+dst	OutputArray	输出图像，与输入图像有相同的尺寸和类型
+ksize	Size	高斯核大小，格式为 (宽度, 高度)，必须为正奇数（如3,5,7,9）
+sigmaX	double	X方向的高斯核标准差，控制模糊程度
+sigmaY	double	Y方向的高斯核标准差（可选，默认=0，表示与sigmaX相同）
+borderType	int	边界像素外推法（可选，默认=BORDER_DEFAULT）
+
+
+三、中值模糊（medianBlur）
+
+语法：
+dst = cv2.medianBlur(src, ksize)
+
+
+参数	    数据类型	    说明
+src	    InputArray	输入图像，支持1、3或4通道图像。当ksize为3或5时，图像深度应为CV_8U、CV_16U或CV_32F，更大孔径时只支持CV_8U
+dst 	OutputArray	输出图像，与输入图像有相同的尺寸和类型
+ksize	int	        孔径线性大小，必须是大于1的奇数（如3,5,7,9）
