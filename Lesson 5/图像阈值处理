@@ -1,0 +1,27 @@
+一、全局阈值处理（threshold）
+
+语法：
+retval, dst = cv2.threshold(src, thresh, maxval, type[, dst])
+
+
+参数名	说明
+src	    输入图像，可以是多通道图像，但有时要求单通道（如灰度图）。具体取决于阈值类型。
+dst	    输出图像，与输入图像相同的尺寸和类型。
+thresh	阈值，用于对像素值进行分类。
+maxval	当使用THRESH_BINARY和THRESH_BINARY_INV等类型时，需要指定的最大值。
+type	阈值化类型，如下所述。
+
+
+
+二、自适应阈值（adaptiveThreshold）
+
+语法；
+retval, dst = cv2.threshold(src, thresh, maxval, type[, dst])
+
+
+参数名     	说明
+src 	    输入图像，可以是多通道图像，但有时要求单通道（如灰度图）。具体取决于阈值类型。
+dst 	    输出图像，与输入图像相同的尺寸和类型。
+thresh	    阈值，用于对像素值进行分类。
+maxval	    当使用THRESH_BINARY和THRESH_BINARY_INV等类型时，需要指定的最大值。
+type	    阈值化类型，如下所述。
