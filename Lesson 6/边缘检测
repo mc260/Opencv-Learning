@@ -1,0 +1,13 @@
+Canny 边缘检测
+
+语法
+edges = cv2.Canny(image, threshold1,threshold2 [edges[apertureSize[L2gradient]]])
+
+
+参数	             数据类型	                    说明
+image	        InputArray	         输入图像，必须是8位单通道灰度图像
+edges	        OutputArray	         输出边缘图，单通道8位图像，与输入图像相同尺寸
+threshold1  	double	             第一个阈值（低阈值），用于边缘连接
+threshold2	    double	             第二个阈值（高阈值），用于强边缘检测
+apertureSize	int	Sobel            算子孔径大小，必须是3、5或7（默认=3）
+L2gradient	    bool	             梯度计算标志，true使用L2范数（更精确），false使用L1范数（默认）
