@@ -5,8 +5,10 @@ from HSVfinding import get_limits
 
 video=cv2.VideoCapture('任务视频.mp4')
 
+#red
 fingcolar=[33,52,167]
-
+#blue
+# fingcolar=[255,255,0]
 '''
 hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
 lowerLimit,upperLimit = get_limits(color=fingcolar)
@@ -28,7 +30,7 @@ while ret:
     bbox = mask_pil.getbbox()
     if bbox is not None:
         x1, y1, x2, y2 = bbox
-        cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 255), 10)
+        cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 255), 28)
     cv2.imshow('frame', frame)           #播放每一帧
     if cv2.waitKey(10) & 0xFF == ord('q'):        #若触发键盘Q建 退出视频
         break
