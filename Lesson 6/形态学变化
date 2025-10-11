@@ -1,0 +1,34 @@
+dst = cv2.dilate(src, kernel[, dst[, anchor[, iterations[, borderType[, borderValue]]]]])
+
+
+参数	说明	取值与说明
+src	输入图像	通常是二值图像或灰度图像。图像深度（数据类型）应为 CV_8U, CV_16U, CV_16S, CV_32F, CV_64F 中的一种 。
+kernel	结构元素（核）	用于定义膨胀操作的邻域形状和大小。可以通过 cv2.getStructuringElement() 创建 。
+iterations	膨胀迭代次数	非负整数，默认为1。增加次数会增强膨胀效果 。
+anchor	锚点位置	一个元组 (x, y)，指定核的锚点。默认为(-1, -1)表示使用核的中心 。
+borderType	边界像素外推模式	默认为 cv2.BORDER_CONSTANT。在处理边界像素时使用 。
+borderValue	边界填充值	当 borderType 为 cv2.BORDER_CONSTANT 时使用的边界填充值，通常为0 。
+
+
+
+
+
+dst = cv2.erode(src, kernel[, dst[, anchor[, iterations[, borderType[, borderValue]]]]])
+
+
+
+
+
+
+
+kernel = cv2.getStructuringElement(shape, ksize[, anchor])
+
+shape：核的形状，主要有以下三种：
+
+cv2.MORPH_RECT - 矩形
+
+cv2.MORPH_CROSS - 十字形
+
+cv2.MORPH_ELLIPSE - 椭圆形
+
+ksize：核的尺寸，例如 (5, 5)。
