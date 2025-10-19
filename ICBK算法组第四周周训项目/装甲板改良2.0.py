@@ -3,7 +3,7 @@ import cv2
 from PIL import Image
 from HSVfinding import get_limits
 
-video=cv2.VideoCapture('text.mp4')
+video=cv2.VideoCapture('../ICBK算法组第三周周训项目/text.mp4')
 
 #red
 #fingcolar=[33,52,167]
@@ -17,17 +17,6 @@ tolerance = 3  # 容差范围
 min_area = 100  # 最小面积阈值（像素）
 max_area = 30000  # 最大面积阈值（像素）
 
-'''
-hsv_img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
-lowerLimit,upperLimit = get_limits(color=fingcolar)
-mask=cv2.inRange(hsv_img,lowerLimit,upperLimit)
-mask_pil=Image.fromarray(mask)
-bbox=mask_pil.getbbox()
-print(bbox)
-if bbox is not None:
-     x1,y1,x2,y2=bbox
-     cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,255),10)
-'''
 ret = True
 while ret:
     ret, frame = video.read()
