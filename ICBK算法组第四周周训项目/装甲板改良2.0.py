@@ -14,7 +14,7 @@ target_aspect_ratio =5  # 期望长宽比
 tolerance = 3  # 容差范围
 
 # 设置面积筛选条件
-min_area = 100  # 最小面积阈值（像素）
+min_area = 20000  # 最小面积阈值（像素）
 max_area = 30000  # 最大面积阈值（像素）
 
 ret = True
