@@ -3,12 +3,12 @@ import cv2
 from PIL import Image
 from HSVfinding import get_limits
 
-video=cv2.VideoCapture('text.mp4')
+video=cv2.VideoCapture('任务视频.mp4')
 
 #red
-#fingcolar=[33,52,167]
+fingcolar=[33,52,167]
 #blue
-fingcolar=[247,245,66]
+#fingcolar=[247,245,66]
 
 # 定义目标宽高比和允许的误差范围 - 新增参数
 target_aspect_ratio = 0.37  # 例如：1.5表示宽高比为3:2

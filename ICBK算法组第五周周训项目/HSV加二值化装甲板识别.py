@@ -11,7 +11,8 @@ def detect_armor_combined():
 
     # 定义颜色阈值（根据实际情况调整）
     red_color = [33, 52, 167]
-    blue_color = [247, 245, 66]
+    #blue_color = [247, 245, 66]
+    blue_color = [233,240,119]
 
     # 选择要检测的颜色
     target_color = blue_color  # 可根据敌方颜色切换
@@ -76,7 +77,7 @@ def detect_armor_combined():
         if color_bbox is not None:
             x1, y1, x2, y2 = color_bbox
             cv2.rectangle(result_frame, (x1, y1), (x2, y2), (0, 255, 0), 2)  # 绿色框表示颜色检测
-            cv2.putText(result_frame, "color", (x1, y1 - 10),
+            cv2.putText(result_frame, "Color", (x1, y1 - 10),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
 
         # 改进：使用灯条顶点构建装甲板
@@ -145,7 +146,7 @@ def detect_armor_combined():
                           (bounding_rect[0], bounding_rect[1]),
                           (bounding_rect[0] + bounding_rect[2], bounding_rect[1] + bounding_rect[3]),
                           (0, 255, 255), 3)  # 黄色框表示形状检测
-            cv2.putText(result_frame, "shape",
+            cv2.putText(result_frame, "Shape",
                         (bounding_rect[0], bounding_rect[1] - 10),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 2)
 
@@ -158,7 +159,7 @@ def detect_armor_combined():
             cv2.rectangle(result_frame,
                           (int(armor_x), int(armor_y)),
                           (int(armor_x + armor_width), int(armor_y + armor_height)),
-                          (255, 0, 0), 3)  # 蓝色框表示最终的装甲板区域
+                          (255, 0, 0), 3)  #最终的装甲板区域
             cv2.putText(result_frame, "Armor",
                         (int(armor_x), int(armor_y) - 10),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)

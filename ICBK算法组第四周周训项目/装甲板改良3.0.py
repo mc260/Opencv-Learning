@@ -50,7 +50,7 @@ def run():
         # 遍历轮廓筛选灯条
         for i in range(len(contours)):
             area = cv2.contourArea(contours[i]) # 计算当前轮廓的面积
-            if area < 150 or area > 800:
+            if area < 100 or area > 900:
                 continue
 
             # 最小面积矩形
@@ -60,7 +60,7 @@ def run():
             height = max(size[0], size[1])
             aspectRatio = height / width
 
-            if 3.0 < aspectRatio < 15.0 and 150 < area < 3000:
+            if 3.0 < aspectRatio < 6.0 and 100 < area < 900:
                 lightBars.append(rect)      # 符合条件的加入灯条列表
 
         # 收集所有灯条顶点    并绘制外接矩形
@@ -84,7 +84,7 @@ def run():
                           (0, 255, 255), 3)
 
         # 显示窗口
-        cv2.imshow("Run", result_image)
+        cv2.imshow("result", result_image)
         cv2.imshow("mask", binaryImage)
 
         # 按帧率等待按键，按键则停止

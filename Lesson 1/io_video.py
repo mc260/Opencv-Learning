@@ -12,6 +12,7 @@ while ret:
 
     cv2.imshow('frame', frame)           #播放每一帧
     if cv2.waitKey(40) & 0xFF == ord('q'):        #若触发键盘Q建 退出视频
+
         break
 
 #释放视频内存 结束窗口进程
