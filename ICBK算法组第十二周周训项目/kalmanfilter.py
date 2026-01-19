@@ -19,7 +19,7 @@ class KalmanFilter:
             [1, 0, dt, 0, 0.5 * dt ** 2, 0],  # x = x + dx*dt + 0.5*ax*dt²
             [0, 1, 0, dt, 0, 0.5 * dt ** 2],  # y = y + dy*dt + 0.5*ay*dt²
             [0, 0, 1, 0, dt, 0],  # dx = dx + ax*dt
-            [0, 0, 0, 1, 0, dt],  # dy = dy + ay*dt
+            [0, 0, 0, 1, 0, dt],   # dy = dy + ay*dt
             [0, 0, 0, 0, 1, 0],  # ax = ax（加速度恒定）
             [0, 0, 0, 0, 0, 1]  # ay = ay
         ], np.float32)
